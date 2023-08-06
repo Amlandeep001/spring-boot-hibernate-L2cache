@@ -1,5 +1,6 @@
 package com.org.springboot.hibernateL2cache.entity;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,15 +18,17 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 @Table(name = "city")
+@Cacheable
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class City {
-	
+public class City
+{
+
 	@Id
-	@GeneratedValue( strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
-	
+
 	String name;
-	
+
 	Long population;
 
 }

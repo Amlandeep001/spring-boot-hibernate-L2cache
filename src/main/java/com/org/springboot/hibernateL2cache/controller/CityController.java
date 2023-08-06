@@ -17,29 +17,29 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/cityapp")
 @Slf4j
-public class CityController {
+public class CityController
+{
 
 	private final CityService cityService;
 
-	public CityController(CityService cityService) {
-
+	public CityController(CityService cityService)
+	{
 		this.cityService = cityService;
-
 	}
-	
+
 	@GetMapping("/cities/{id}")
-	public ResponseEntity<City> getCityById(@PathVariable(name = "id") Integer id){
-		
+	public ResponseEntity<City> getCityById(@PathVariable(name = "id") Integer id)
+	{
 		log.info("Fetching city information with id: {}", id);
-		
+
 		return new ResponseEntity<>(cityService.getCityById(id), HttpStatus.OK);
 	}
-	
+
 	@PostMapping("/cities")
-	public ResponseEntity<City> saveCity(@RequestBody City city){
-		
+	public ResponseEntity<City> saveCity(@RequestBody City city)
+	{
 		log.info("Saving city information for city object: {}", city.toString());
-		
+
 		return new ResponseEntity<>(cityService.saveCity(city), HttpStatus.CREATED);
 	}
 

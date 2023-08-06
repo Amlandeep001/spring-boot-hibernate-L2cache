@@ -6,26 +6,24 @@ import com.org.springboot.hibernateL2cache.entity.City;
 import com.org.springboot.hibernateL2cache.repository.CityRepository;
 
 @Service
-public class CityService {
-	
+public class CityService
+{
+
 	private final CityRepository cityRepository;
-	
-	public CityService(CityRepository cityRepository) {
-		
+
+	public CityService(CityRepository cityRepository)
+	{
 		this.cityRepository = cityRepository;
-		
 	}
-	
-	public City getCityById(Integer id) {
-		
+
+	public City getCityById(Integer id)
+	{
 		return cityRepository.findById(id).get();
-		
 	}
-	
-	public City saveCity(City city) {
-		
+
+	public City saveCity(City city)
+	{
 		return cityRepository.save(city);
-		
 	}
 
 }

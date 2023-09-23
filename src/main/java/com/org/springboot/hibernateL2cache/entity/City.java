@@ -22,7 +22,6 @@ import lombok.experimental.FieldDefaults;
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class City
 {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
@@ -30,5 +29,4 @@ public class City
 	String name;
 
 	Long population;
-
 }

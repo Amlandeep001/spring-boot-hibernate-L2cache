@@ -19,7 +19,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CityController
 {
-
 	private final CityService cityService;
 
 	public CityController(CityService cityService)
@@ -42,5 +41,4 @@ public class CityController
 
 		return new ResponseEntity<>(cityService.saveCity(city), HttpStatus.CREATED);
 	}
-
 }

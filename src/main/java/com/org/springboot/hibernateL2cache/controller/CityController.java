@@ -27,7 +27,7 @@ public class CityController
 	}
 
 	@GetMapping("/cities/{id}")
-	public ResponseEntity<City> getCityById(@PathVariable(name = "id") Integer id)
+	public ResponseEntity<City> getCityById(@PathVariable Integer id)
 	{
 		log.info("Fetching city information with id: {}", id);
 
